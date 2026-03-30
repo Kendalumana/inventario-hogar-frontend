@@ -1,0 +1,431 @@
+/* -----------------------------------------------------------
+   1. CONFIGURACIÓN GLOBAL (EL ROOT)
+   ----------------------------------------------------------- */
+:root {
+  font-family: 'Poppins', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* COLOR MAESTRO: Fondo de la página (Blanco puro según tu cambio) */
+  --color-fondo-total: #ffffff; 
+
+  background-color: var(--color-fondo-total); 
+  color: #121314;
+  color-scheme: light;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-smoothing: grayscale;
+}
+
+/* -----------------------------------------------------------
+   2. REESTABLECER EL CUERPO (BODY)
+   ----------------------------------------------------------- */
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%; 
+  /* Forzamos el blanco para que no queden huecos de otros colores */
+  background-color: var(--color-fondo-total) !important;
+  min-height: 100vh;
+}
+
+/* -----------------------------------------------------------
+   3. EL CONTENEDOR PRINCIPAL (TU WRAPPER-MAIN)
+   ----------------------------------------------------------- */
+.contenedor-principal {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 40px 50px; 
+  gap: 20px; 
+  width: 100%;
+  max-width: 100% !important; 
+  background-color: transparent !important;
+}
+
+/* -----------------------------------------------------------
+   4. SECCIONES O APARTADOS
+   ----------------------------------------------------------- */
+.apartado-seccion {
+  /* Color verde MK para las tarjetas/ventanas de gestión */
+  background-color: #809671; 
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1); 
+  width: 100%; 
+}
+
+/* Efecto de cristal para los apartados de cocina */
+.apartado-seccion-cocina {
+  background: rgba(128, 150, 113, 0.08) !important; /* Verde ultra suave */
+  backdrop-filter: blur(12px); /* Efecto de cristal esmerilado */
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(128, 150, 113, 0.2);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* Cambiar el color de los textos para que contrasten con el fondo claro */
+.texto-cocina {
+  color: #3d405b !important; /* Azul grisáceo elegante */
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+/* -----------------------------------------------------------
+   5. ELEMENTOS INDIVIDUALES EN ESPAÑOL
+   ----------------------------------------------------------- */
+
+/* Banner superior con imagen de fondo */
+.barra-navegacion-total {
+  position: relative;
+  width: 100%;
+  height: 350px; 
+  overflow: hidden;
+  margin: 0;
+}
+
+.fondo-imagen-header {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  display: block;
+}
+
+.capa-interactiva {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-start; 
+  padding: 30px 60px;
+  /* Degradado para legibilidad del menú */
+  background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, transparent 100%);
+}
+
+.texto-branding {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+}
+
+.menu-enlaces-pc {
+  display: flex;
+  gap: 40px;
+}
+
+.enlace-menu {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+  transition: all 0.3s;
+}
+
+.enlace-menu:hover {
+  color: #725C3A;
+  transform: translateY(-3px);
+}
+
+/* -----------------------------------------------------------
+   6. AJUSTES PARA PANTALLA COMPLETA (PC GIGANTE)
+   ----------------------------------------------------------- */
+#root {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: transparent !important;
+}
+
+.contenedor-principal {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  padding-left: 60px !important;
+  padding-right: 60px !important;
+}
+
+/* -----------------------------------------------------------
+   7. BOTONES TIPO VENTANA ARCO (FILTROS) Y BOTONES COMUNES 
+   ----------------------------------------------------------- */
+.ventana-arco-btn {
+  background: #f8f9fa;
+  border: none;
+  border-radius: 15px;
+  padding: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+.ventana-arco-btn:hover {
+  transform: translateY(-10px);
+  background: #ffffff;
+}
+
+.ventana-arco-btn.activa {
+  border: 3px solid #725C3A;
+  transform: scale(1.05);
+}
+
+/* Cabecera del arco que contiene la imagen */
+.ventana-header {
+  height: 140px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; 
+  /* Forma de arco perfecta */
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  margin: 10px;
+  border: 1px solid rgba(0,0,0,0.05);
+  background-color: #f0f0f0;
+}
+
+.imagen-arco {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  display: block;
+}
+
+.ventana-body {
+  padding: 15px;
+  text-align: center;
+}
+
+.ventana-body .titulo {
+  display: block;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.ventana-body .subtitulo {
+  font-size: 0.75rem;
+  color: #777;
+  margin: 0;
+}
+
+/* -----------------------------------------------------------
+   ESTILO DE BOTONES TIPO TARJETA MODERNA
+   ----------------------------------------------------------- */
+.btn-sub-ubicacion {
+  /* Fondo blanco translúcido (efecto cristal) */
+  background: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(128, 150, 113, 0.3) !important;
+  border-radius: 20px !important; /* Esquinas más cuadradas pero suaves */
+  padding: 20px 10px !important;
+  color: #5a6344 !important;
+  font-weight: 700 !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05) !important;
+  
+  /* Alineación vertical para el Icono arriba y Texto abajo */
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px;
+  min-height: 100px; /* Asegura que todos tengan el mismo tamaño */
+}
+
+.btn-sub-ubicacion.active {
+  background: #809671 !important;
+  color: white !important;
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 25px rgba(128, 150, 113, 0.3) !important;
+  border-color: transparent !important;
+}
+
+.btn-sub-ubicacion:hover:not(.active) {
+  background: white !important;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08) !important;
+  color: #809671 !important;
+}
+
+/* Ajuste para que el icono se vea grande y pro */
+.btn-sub-ubicacion span {
+  font-size: 1.8rem;
+  display: block;
+}
+
+/* Colores de respaldo por si no cargan las imágenes */
+.color-todos { background-color: #d1d8bd; }
+.color-bodega { background-color: #a4ac86; }
+.color-tienda { background-color: #809671; }
+.color-otros { background-color: #606c38; }
+
+/* Ajuste para que la tabla sea legible sobre el verde */
+.table {
+  background-color: transparent !important;
+  border-spacing: 0 12px !important;
+  border-collapse: separate !important;
+}
+
+.table thead th {
+  background-color: #121314 !important;
+  color: white !important;
+  border: none !important;
+  padding: 15px !important;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.table tbody tr {
+  background-color: white !important;
+  transition: transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.table tbody tr:hover {
+  transform: scale(1.01);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+}
+
+.table td {
+  padding: 20px !important;
+  border: none !important;
+  vertical-align: middle !important;
+}
+
+.table td:first-child { border-top-left-radius: 12px; border-bottom-left-radius: 12px; }
+.table td:last-child { border-top-right-radius: 12px; border-bottom-right-radius: 12px; }
+
+/* Colores para Medicamentos */
+.fila-botiquin { border-left: 6px solid #e74c3c !important; } /* Rojo Médico */
+.fila-estante { border-left: 6px solid #3498db !important; }   /* Azul Limpieza */
+.fila-noche { border-left: 6px solid #9b59b6 !important; }     /* Morado Relax */
+
+/* Clase para el contenedor de MEDICAMENTOS que cubre todo */
+.escenario-medico {
+  margin: -40px -60px; /* Anulamos el padding del contenedor principal */
+  padding: 40px 60px;
+  min-height: 100vh;
+  /* Fondo temático: Azul hospital suave o una imagen de medicina */
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); 
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* Tabla estilo "Receta Médica" */
+.tabla-receta {
+  background: white !important;
+  border-radius: 0px !important; /* Estilo papel */
+  border: 1px solid #dee2e6;
+  box-shadow: 10px 10px 0px rgba(0,0,0,0.05); /* Sombra rígida tipo papel */
+}
+
+/* Ocultar elementos si es necesario */
+.ocultar-superior {
+  display: none !important;
+}
+
+/* Este es el fondo que cambiará todo el ambiente */
+.contenedor-medico-total {
+  background: radial-gradient(circle at top right, #ffffff, #eef2f3) !important;
+  min-height: 100vh;
+  margin: -40px -60px; /* Esto elimina los márgenes del Layout blanco */
+  padding: 40px 60px;
+  position: relative;
+}
+
+/* Una tabla que parezca una hoja de hospital limpia */
+.tabla-medica-limpia {
+  background: white !important;
+  border-top: 5px solid #e74c3c !important; /* Línea roja de emergencia arriba */
+  border-radius: 8px !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05) !important;
+}
+
+/* Títulos con fuente más seria */
+.titulo-medico {
+  font-family: 'Inter', sans-serif;
+  color: #2c3e50;
+  letter-spacing: -1px;
+  font-weight: 800;
+}/* Este estilo forzará un ambiente oscuro y profesional de laboratorio */
+.modo-laboratorio-full {
+  position: fixed; /* Se puede cambiar a fixed si se desea ver la parte de arriba  */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #0f172a !important; /* Azul muy oscuro tipo software médico */
+  z-index: 1000; /* Se pone por encima de TODO, incluso del header */
+  overflow-y: auto;
+  padding: 50px;
+  color: white;
+}
+
+/* Tarjeta de cristal para la tabla */
+.panel-vidrio-medico {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+}
+
+/* Forzamos que la tabla sea legible en fondo oscuro */
+.panel-vidrio-medico table {
+  background: transparent !important;
+  color: white !important;
+}
+
+.panel-vidrio-medico thead th {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #38bdf8 !important; /* Azul neón médico */
+}
+
+/* Contenedor de la Ficha Médica */
+.ficha-informativa-medica {
+  background: rgba(15, 23, 42, 0.8) !important;
+  backdrop-filter: blur(15px);
+  border: 2px solid #38bdf8;
+  border-radius: 20px;
+  padding: 25px;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+}
+
+.foto-medicamento-circulo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px dashed #38bdf8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.info-texto-ficha h2 {
+  color: #38bdf8;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.badge-frecuencia {
+  background: #10b981;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+}
