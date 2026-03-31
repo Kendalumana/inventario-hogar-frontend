@@ -1,0 +1,38 @@
+Paleta base (HEX):
+Mar Profundo: #0A3D62 (azul principal para encabezados, icons)
+
+Turquesa Claro: #17A2B8 (acentos, botones primarios)
+
+Arena Suave: #F4E6D1 (fondos suaves)
+
+Sol/Coral: #FF7F50 (llamados a la acción, pins destacados)
+
+Gris Pardo: #575757 (texto secundario)
+
+Blanco: #FFFFFF (texto sobre fondos oscuros / tarjetas)
+
+Tipografías:
+
+Titulares: Montserrat (semi-bold 600–700)
+
+Texto: Inter o Poppins (400–500). Altas para legibilidad en móviles.
+
+Estilo UI:
+
+Tarjetas con bordes redondeados (12–16px) y sombras suaves.
+
+Chips/píldoras para filtros (categorías) con iconografía simple.
+
+Mapa full-width; en móvil, hoja inferior (bottom sheet) deslizable con lista.
+
+Logo (brief):
+
+Marca: Informa Puerto
+
+Isotipo: Pin de mapa estilizado con ola interior (ola negativa recorta el pin). Variante secundaria con “IP”.
+
+Construcción: geometría simple; evita microdetalles; funciona a 24px.
+
+Color: versión principal #0A3D62 + onda blanca; alterna monocromo.
+
+Favicon: pin con ola en 32×32 y 16×16.

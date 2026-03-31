@@ -1,0 +1,298 @@
+```jsx
+import React from 'react';
+import { Github, Linkedin, Mail, ExternalLink, Code, GraduationCap, Briefcase, Award, ChevronDown } from 'lucide-react';
+
+const App = () => {
+  const scrollToSection = (sectionId) => {
+    document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
+      {/* Navigation */}
+      <nav className="fixed top-0 w-full bg-black/20 backdrop-blur-md z-50 border-b border-white/10">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center py-4">
+            <div className="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              Carlos Rodríguez
+            </div>
+            <div className="hidden md:flex space-x-8">
+              <button onClick={() => scrollToSection('about')} className="hover:text-purple-300 transition-colors">Inicio</button>
+              <button onClick={() => scrollToSection('education')} className="hover:text-purple-300 transition-colors">Formación</button>
+              <button onClick={() => scrollToSection('experience')} className="hover:text-purple-300 transition-colors">Experiencia</button>
+              <button onClick={() => scrollToSection('projects')} className="hover:text-purple-300 transition-colors">Proyectos</button>
+              <button onClick={() => scrollToSection('contact')} className="hover:text-purple-300 transition-colors">Contacto</button>
+            </div>
+            <div className="flex space-x-4">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-purple-300 transition-colors">
+                <Github size={20} />
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-purple-300 transition-colors">
+                <Linkedin size={20} />
+              </a>
+              <a href="mailto:carlos@example.com" className="hover:text-purple-300 transition-colors">
+                <Mail size={20} />
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section id="about" className="pt-20 pb-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+                Ingeniero de Software
+                <span className="block bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                  Apasionado por la Tecnología
+                </span>
+              </h1>
+              <p className="text-xl text-gray-300 leading-relaxed">
+                Desarrollo soluciones innovadoras que transforman ideas en productos digitales escalables y eficientes. 
+                Especializado en arquitectura de software, desarrollo web moderno y sistemas distribuidos.
+              </p>
+              <div className="flex flex-wrap gap-4 pt-4">
+                <button 
+                  onClick={() => scrollToSection('projects')}
+                  className="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all transform hover:scale-105"
+                >
+                  Ver Proyectos
+                </button>
+                <button 
+                  onClick={() => scrollToSection('contact')}
+                  className="px-8 py-3 border-2 border-purple-400 rounded-lg font-semibold hover:bg-purple-400/20 transition-all"
+                >
+                  Contactarme
+                </button>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="w-80 h-80 mx-auto rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 p-1">
+                <div className="w-full h-full rounded-full bg-gray-800 flex items-center justify-center overflow-hidden">
+                  <img 
+                    src="https://placehold.co/300x300/1e293b/94a3b8?text=Carlos+Rodríguez" 
+                    alt="Carlos Rodríguez" 
+                    className="w-72 h-72 object-cover rounded-full"
+                  />
+                </div>
+              </div>
+              <div className="absolute -top-4 -right-4 bg-purple-600 px-4 py-2 rounded-lg">
+                <Code className="inline mr-2" size={16} />
+                Full Stack
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Education Section */}
+      <section id="education" className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center mb-4">
+              <GraduationCap className="mr-3 text-purple-400" size={32} />
+              <h2 className="text-3xl font-bold">Formación Académica</h2>
+            </div>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Mi camino académico me ha proporcionado una base sólida en ciencias de la computación y desarrollo de software.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-purple-400/30 transition-all">
+              <div className="flex items-start space-x-4">
+                <div className="bg-purple-600/20 p-3 rounded-lg">
+                  <GraduationCap className="text-purple-400" size={24} />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-semibold mb-2">Ingeniería en Sistemas Computacionales</h3>
+                  <p className="text-purple-400 mb-2">Universidad Nacional Autónoma de México</p>
+                  <p className="text-gray-400 text-sm">2018 - 2022</p>
+                  <p className="text-gray-300 mt-3">
+                    Especialización en desarrollo de software, bases de datos y arquitectura de sistemas. 
+                    Promedio: 9.2/10
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-purple-400/30 transition-all">
+              <div className="flex items-start space-x-4">
+                <div className="bg-purple-600/20 p-3 rounded-lg">
+                  <Award className="text-purple-400" size={24} />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-semibold mb-2">Certificación AWS Solutions Architect</h3>
+                  <p className="text-purple-400 mb-2">Amazon Web Services</p>
+                  <p className="text-gray-400 text-sm">2023</p>
+                  <p className="text-gray-300 mt-3">
+                    Certificación oficial en arquitectura de soluciones en la nube, 
+                    especializado en servicios de AWS y mejores prácticas de seguridad.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Experience Section */}
+      <section id="experience" className="py-16 px-4 sm:px-6 lg:px-8 bg-black/20">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center mb-4">
+              <Briefcase className="mr-3 text-purple-400" size={32} />
+              <h2 className="text-3xl font-bold">Experiencia Profesional</h2>
+            </div>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              He trabajado en diversos proyectos desafiantes que han fortalecido mis habilidades técnicas y de liderazgo.
+            </p>
+          </div>
+
+          <div className="space-y-8">
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-purple-400/30 transition-all">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                <div>
+                  <h3 className="text-xl font-semibold">Senior Software Engineer</h3>
+                  <p className="text-purple-400">TechCorp Solutions</p>
+                </div>
+                <span className="text-gray-400 text-sm mt-2 md:mt-0">Enero 2022 - Presente</span>
+              </div>
+              <ul className="text-gray-300 space-y-2">
+                <li>• Liderazgo de equipo de 5 desarrolladores en la migración de monolito a microservicios</li>
+                <li>• Implementación de arquitectura serverless usando AWS Lambda y API Gateway</li>
+                <li>• Reducción del 40% en costos de infraestructura y mejora del 60% en tiempos de respuesta</li>
+                <li>• Diseño e implementación de sistema de autenticación OAuth 2.0 para 500k+ usuarios</li>
+              </ul>
+            </div>
+
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-purple-400/30 transition-all">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                <div>
+                  <h3 className="text-xl font-semibold">Software Developer</h3>
+                  <p className="text-purple-400">Innovatech Startups</p>
+                </div>
+                <span className="text-gray-400 text-sm mt-2 md:mt-0">Junio 2020 - Diciembre 2021</span>
+              </div>
+              <ul className="text-gray-300 space-y-2">
+                <li>• Desarrollo de aplicaciones web full-stack usando React, Node.js y MongoDB</li>
+                <li>• Implementación de CI/CD pipelines con GitHub Actions y Docker</li>
+                <li>• Colaboración con equipos de diseño UX/UI para crear experiencias de usuario intuitivas</li>
+                <li>• Mantenimiento y optimización de bases de datos para mejorar el rendimiento</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Proyectos Destacados</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Algunos de los proyectos más impactantes en los que he trabajado o liderado.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden border border-white/10 hover:border-purple-400/30 transition-all">
+              <div className="h-48 bg-gradient-to-r from-purple-600/30 to-pink-600/30 flex items-center justify-center">
+                <Code className="text-purple-400" size={48} />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">Plataforma de E-commerce</h3>
+                <p className="text-gray-300 mb-4">
+                  Sistema completo de comercio electrónico con procesamiento de pagos, 
+                  gestión de inventario y panel de administración.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="bg-purple-600/20 text-purple-300 px-3 py-1 rounded-full text-sm">React</span>
+                  <span className="bg-purple-600/20 text-purple-300 px-3 py-1 rounded-full text-sm">Node.js</span>
+                  <span className="bg-purple-600/20 text-purple-300 px-3 py-1 rounded-full text-sm">MongoDB</span>
+                  <span className="bg-purple-600/20 text-purple-300 px-3 py-1 rounded-full text-sm">AWS</span>
+                </div>
+                <a href="#" className="flex items-center text-purple-400 hover:text-purple-300">
+                  Ver proyecto <ExternalLink className="ml-2" size={16} />
+                </a>
+              </div>
+            </div>
+
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden border border-white/10 hover:border-purple-400/30 transition-all">
+              <div className="h-48 bg-gradient-to-r from-blue-600/30 to-cyan-600/30 flex items-center justify-center">
+                <Code className="text-blue-400" size={48} />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">Sistema de Gestión Hospitalaria</h3>
+                <p className="text-gray-300 mb-4">
+                  Aplicación web para la gestión integral de hospitales, incluyendo citas, 
+                  historiales médicos y facturación electrónica.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="bg-blue-600/20 text-blue-300 px-3 py-1 rounded-full text-sm">Angular</span>
+                  <span className="bg-blue-600/20 text-blue-300 px-3 py-1 rounded-full text-sm">Spring Boot</span>
+                  <span className="bg-blue-600/20 text-blue-300 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+                  <span className="bg-blue-600/20 text-blue-300 px-3 py-1 rounded-full text-sm">Docker</span>
+                </div>
+                <a href="#" className="flex items-center text-blue-400 hover:text-blue-300">
+                  Ver proyecto <ExternalLink className="ml-2" size={16} />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-16 px-4 sm:px-6 lg:px-8 bg-black/20">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-4">¿Listo para trabajar juntos?</h2>
+          <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
+            Estoy siempre interesado en nuevos desafíos y oportunidades para crear soluciones tecnológicas innovadoras. 
+            ¡No dudes en contactarme!
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a 
+              href="mailto:carlos@example.com" 
+              className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg font-semibold hover:from-purple-700 hover:to-pink-700 transition-all transform hover:scale-105 flex items-center"
+            >
+              <Mail className="mr-2" size={20} />
+              Enviar Email
+            </a>
+            <div className="flex space-x-4">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="p-3 bg-white/10 rounded-lg hover:bg-purple-600/30 transition-all">
+                <Github size={24} />
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-3 bg-white/10 rounded-lg hover:bg-purple-600/30 transition-all">
+                <Linkedin size={24} />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-8 px-4 sm:px-6 lg:px-8 border-t border-white/10">
+        <div className="max-w-6xl mx-auto text-center text-gray-400">
+          <p>&copy; 2024 Carlos Rodríguez. Todos los derechos reservados.</p>
+        </div>
+      </footer>
+
+      {/* Scroll to top button */}
+      <button 
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        className="fixed bottom-8 right-8 p-3 bg-purple-600 rounded-full hover:bg-purple-700 transition-all z-40"
+      >
+        <ChevronDown className="rotate-180" size={20} />
+      </button>
+    </div>
+  );
+};
+export default App;
+```
+```jsx
+export default App;
+```
